@@ -20,7 +20,7 @@ do
     end
 
     -- // Create embed
-    function Embed:CreateEmbed(title, description, color, timestamp)
+    function Embed:CreateEmbed(title, description, color)
         local embed = {
             title = title or "",
             description = description or "",
@@ -29,8 +29,7 @@ do
             thumbnail = {},
             author = {},
             footer = {},
-            fields = {},
-            timestamp = timestamp and DateTime.now():ToIsoDate() or nil
+            fields = {}
         }
         table.insert(self.embeds, embed)
 
