@@ -16,34 +16,34 @@ function Tool.new(player)
     return self
 end
 
-function Tool:UpdateCharacterTool()
-    if not self.player.Character then return nil end
-
-    for _, item in pairs(self.player.Character:GetChildren()) do
-        if item:IsA("Tool") then
-            self.currentTool = item
-            return item
-        end
-    end
-
-    self.currentTool = nil
-
-    return nil
-end
-
-function Tool:UpdateBackpackTools()
-    self.backpack = {}
-
-    if not self.player:FindFirstChild("Backpack") then return end
-
-    for _, item in pairs(self.player.Backpack:GetChildren()) do
-        if item:IsA("Tool") then
-            table.insert(self.backpack, item)
-        end
-    end
-end
-
 do
+    function Tool:UpdateCharacterTool()
+        if not self.player.Character then return nil end
+    
+        for _, item in pairs(self.player.Character:GetChildren()) do
+            if item:IsA("Tool") then
+                self.currentTool = item
+                return item
+            end
+        end
+    
+        self.currentTool = nil
+    
+        return nil
+    end
+    
+    function Tool:UpdateBackpackTools()
+        self.backpack = {}
+    
+        if not self.player:FindFirstChild("Backpack") then return end
+    
+        for _, item in pairs(self.player.Backpack:GetChildren()) do
+            if item:IsA("Tool") then
+                table.insert(self.backpack, item)
+            end
+        end
+    end
+
     function Tool:GetCharacterTool()
         return self:UpdateCharacterTool()
     end
