@@ -3,7 +3,7 @@ Tool.__index = Tool
 
 function Tool.new(player)
     assert(player and player:IsA("Player"), "A valid player instance is required.")
-    
+
     local self = setmetatable({}, Tool)
     
     self.player = player
