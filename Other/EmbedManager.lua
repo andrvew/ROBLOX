@@ -18,7 +18,7 @@ do
             title = title or "",
             description = description or "",
             type = "rich",
-            color = (type(color) == "string" and color:match("^%x+$")) and tonumber(color, 16) or tonumber(0xFFFFFF),
+            color = (type(color) == "string" and color:match("^%x+$")) and tonumber(color, 16),
             thumbnail = {},
             author = {},
             footer = {},
