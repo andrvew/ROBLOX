@@ -18,7 +18,7 @@ do
             title = title or "",
             description = description or "",
             type = "rich",
-            color = color or tonumber(0xFFFFFF),
+            color = tonumber(hex:gsub("#", ""), 16),
             thumbnail = {},
             author = {},
             footer = {},
